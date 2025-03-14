@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "rollup --config",
+    "dev": "rollup --config --watch"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rollup": "^4.29.1",
+    "rollup-plugin-replace": "^2.2.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2"
+  }
+}

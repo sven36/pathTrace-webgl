@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>pbr</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="IE=11.00" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=0.5, maximum-scale=0.5">
+
+    <link rel="apple-touch-icon-precomposed" href="icon.png" />
+    <link rel="touch-icon-precomposed" href="icon.png" />
+
+    <script src="./dist/bundle.js"></script>
+    <script>
+     
+        var appversion = 0;
+        function gameLoad(version) {
+            init();
+        }
+
+        var hasInit = false;
+        function init() {
+            hasInit = true;
+            Engine.initEngine(document.getElementById('gameCanvas'));
+            window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+            if (requestAnimationFrame) {
+                requestAnimationFrame(step);
+            }
+        }
+        function step(timestamp) {
+            update()
+            requestAnimationFrame(step);
+        }
+        function update() {
+            Engine.update();
+        }
+    </script>
+</head>
+
+<body onload='gameLoad()'  ontouchmove="event.preventDefault()" style="overflow-x: hidden; overflow-y: hidden;background-color:#000000;display: flex; justify-content: center; align-items: center;">
+    <canvas id="gameCanvas" width="800" height="600" style="z-index:1,"></canvas>
+</body>
+
+</html>

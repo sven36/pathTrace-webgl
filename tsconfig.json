@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "module": "esnext",
+      "target": "esnext",
+      "skipDefaultLibCheck": true,
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "sourceMap": false,
+      "baseUrl": "./",
+      "skipLibCheck": true,
+      "paths": {
+        "@/*": ["engine/*"]
+      }
+    },
+    "exclude": ["node_modules", "types", "packages/*/tests"]
+  }
+  
